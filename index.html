@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #181a1b;
+            color: #f0f6fc;
+            font-family: 'Roboto Mono', monospace;
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+        }
+        textarea {
+            outline: none;
+            resize: none;
+            overflow: auto;
+            max-width: 100%;
+            background-color: #2a2d2f;
+            color: #f0f6fc;
+            border: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        label {
+            display: block;
+            text-align: center;
+        }
+    </style>
+    <title>ROT13 Encoder &amp; Decoder</title>
+	<script type="text/javascript">
+		function rot(s, i) {
+			return s.replace(/[a-zA-Z]/g, function (c) {
+				return String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + i) ? c : c - 26);
+			});
+		}
+		function update() {
+			document.getElementById('output').value = rot(document.getElementById('input').value, +13);
+		}
+	</script>
+</head>
+<body>
+    <h1>ROT13 Encoder &amp; Decoder</h1>
+    <label for="input">Input</label>
+    <p><textarea id="input" cols="60" rows="10" onkeyup="update()" onchange="update()" autofocus></textarea></p>
+    <label for="output">Output</label>
+    <p><textarea id="output" cols="60" rows="10" readonly></textarea></p>
+</body>
+</html>
