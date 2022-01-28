@@ -34,6 +34,16 @@
             display: block;
             text-align: center;
         }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: fit-content;
+            height: 2.5rem;
+            font-size: 12px;
+        }
+        a, a:hover, a:focus, a:active {
+            color: inherit;
+        }
     </style>
     <title>ROT13 Encoder &amp; Decoder</title>
 	<script type="text/javascript">
@@ -53,5 +63,8 @@
     <p><textarea id="input" cols="60" rows="10" onkeyup="update()" onchange="update()" autofocus></textarea></p>
     <label for="output">Output</label>
     <p><textarea id="output" cols="60" rows="10" readonly></textarea></p>
+    <footer>
+        <p>Made with ❤️ by <a href="https://github.com/sandaruonline" target="_blank">Sandaru Fernando</a></p>
+    </footer>
 </body>
 </html>
