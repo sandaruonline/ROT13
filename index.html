@@ -37,9 +37,15 @@
         footer {
             position: absolute;
             bottom: 0;
-            width: fit-content;
-            height: 2.5rem;
+            width: 100vw;
+            height: auto;
             font-size: 12px;
+            padding-top: 40x;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
         }
         a, a:hover, a:focus, a:active {
             color: inherit;
@@ -64,7 +70,9 @@
     <label for="output">Output</label>
     <p><textarea id="output" cols="60" rows="10" readonly></textarea></p>
     <footer>
+        <div class="footer-content">
         <p>Made with ❤️ by <a href="https://github.com/sandaruonline" target="_blank" rel="noreferrer noopener">Sandaru Fernando</a></p>
+        </div>
     </footer>
 </body>
 </html>
